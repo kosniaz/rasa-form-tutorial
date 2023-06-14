@@ -1,0 +1,26 @@
+version: "3.1"
+
+rules:
+- rule: Activate form
+  steps:
+  - intent: new_entry
+  - action: vine_form
+  - active_loop: vine_form
+
+
+# rule for completing the form (maybe not necessary but good 2have)
+
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: vine_form
+  steps:
+  # Form is deactivated
+  - action: vine_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: utter_thank_you
+  - action: utter_slots_values

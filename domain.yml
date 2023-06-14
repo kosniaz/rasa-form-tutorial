@@ -1,0 +1,92 @@
+version: "3.1"
+
+intents:
+- new_entry
+- affirmative
+- negative
+
+responses:
+  utter_ask_vine_name:
+  - text: Σε ποιόν αμπελώνα βρίσκεσαι;
+  utter_ask_illness:
+  - text: Εντοπίστηκε κάποια αρρώστια;
+  utter_ask_treatment:
+  - text: Εφαρμόστηκε κάποια θεραπεία;
+  utter_ask_harvest:
+  - text: Πώς θα χαρακτήριζες τη σοδειά;
+  utter_thank_you:
+  - text: Ευχαριστώ πολύ για την καταχώρηση
+  utter_slots_values:
+  - text:  vine_name = {vine_name}, harvest = {harvest}, illness = {illness}, treatment = {treatment}
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+actions:
+- utter_thank_you
+- utter_ask_vine_name
+- utter_ask_illness
+- utter_ask_treatment
+- utter_ask_harvest
+- utter_slots_values
+
+slots:
+  vine_name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+      conditions:
+       - active_loop: vine_form
+         requested_slot: vine_name
+  harvest:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+      conditions:
+       - active_loop: vine_form
+         requested_slot: harvest
+  illness:
+    type: bool
+    influence_conversation: false
+    mappings:
+    - type: from_intent
+      intent: affirmative
+      value: true
+      conditions:
+      - active_loop: vine_form
+        requested_slot: illness
+    - type: from_intent
+      intent: negative
+      value: false
+      conditions:
+      - active_loop: vine_form
+        requested_slot: illness
+  treatment:
+    type: bool
+    influence_conversation: false
+    mappings:
+    - type: from_intent
+      intent: affirmative
+      value: true
+      conditions:
+      - active_loop: vine_form
+        requested_slot: treatment
+    - type: from_intent
+      intent: negative
+      value: false
+      conditions:
+      - active_loop: vine_form
+        requested_slot: treatment
+
+forms:
+  vine_form:
+    required_slots:
+      - vine_name
+      - harvest
+      - illness
+      - treatment
+

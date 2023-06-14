@@ -1,0 +1,41 @@
+version: "3.1"
+
+nlu:
+- intent: new_entry
+  examples: |
+    - goodmorning
+    - νεα καταχώρηση
+    - θέλω να κάνω καταχώρηση
+    - να καταχωρήσω
+    - goodevening
+    - good afternoon
+
+- intent: affirmative
+  examples: |
+    - ναι
+    - μάλιστα
+    - φυσικά
+    - εννοείται
+    - ναι ναι ναιι
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: negative
+  examples: |
+    - no
+    - όχι
+    - όχι οχι
+    - μπα
+    - δεν
+    - δεν νομιζω
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
