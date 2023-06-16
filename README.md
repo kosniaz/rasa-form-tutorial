@@ -19,7 +19,7 @@ Client code:
 CHATBOT = "http://localhost:5005/webhooks/rest/webhook"
 
 payload = '{"sender": "' + user + '", "message": "' + message + '"}'
-r = requests.post(CHATBOT, data=payload).encode('utf-8')
+r = requests.post(CHATBOT, data=payload.encode('utf-8'))
 
 response = json.loads(r.content)
 ```
