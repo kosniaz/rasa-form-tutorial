@@ -6,18 +6,19 @@ intents:
 - negative
 
 responses:
-  utter_ask_vine_name:
-  - text: Σε ποιόν αμπελώνα βρίσκεσαι;
-  utter_ask_illness:
-  - text: Εντοπίστηκε κάποια αρρώστια;
-  utter_ask_treatment:
-  - text: Εφαρμόστηκε κάποια θεραπεία;
-  utter_ask_harvest:
-  - text: Πώς θα χαρακτήριζες τη σοδειά;
+  utter_ask_vineyard_name:
+  - text: 
+What's the name of your vineyard?
+  utter_ask_has_illness:
+  - text: Has there been any observed sickness in the vineyard?;
+  utter_ask_has_treatment:
+  - text: Has there been any has_treatment conducted?
+  utter_ask_vineyard_status:
+  - text: How's the vineyard progressing?
   utter_thank_you:
   - text: Ευχαριστώ πολύ για την καταχώρηση
   utter_slots_values:
-  - text:  vine_name = {vine_name}, harvest = {harvest}, illness = {illness}, treatment = {treatment}
+  - text:  vineyard_name = {vineyard_name}, vineyard_status = {vineyard_status}, has_illness = {has_illness}, has_treatment = {has_treatment}
 
 session_config:
   session_expiration_time: 60
@@ -26,30 +27,30 @@ session_config:
 
 actions:
 - utter_thank_you
-- utter_ask_vine_name
-- utter_ask_illness
-- utter_ask_treatment
-- utter_ask_harvest
+- utter_ask_vineyard_name
+- utter_ask_has_illness
+- utter_ask_has_treatment
+- utter_ask_vineyard_status
 - utter_slots_values
 
 slots:
-  vine_name:
+  vineyard_name:
     type: text
     influence_conversation: false
     mappings:
     - type: from_text
       conditions:
        - active_loop: vine_form
-         requested_slot: vine_name
-  harvest:
+         requested_slot: vineyard_name
+  vineyard_status:
     type: text
     influence_conversation: false
     mappings:
     - type: from_text
       conditions:
        - active_loop: vine_form
-         requested_slot: harvest
-  illness:
+         requested_slot: vineyard_status
+  has_illness:
     type: bool
     influence_conversation: false
     mappings:
@@ -58,14 +59,14 @@ slots:
       value: true
       conditions:
       - active_loop: vine_form
-        requested_slot: illness
+        requested_slot: has_illness
     - type: from_intent
       intent: negative
       value: false
       conditions:
       - active_loop: vine_form
-        requested_slot: illness
-  treatment:
+        requested_slot: has_illness
+  has_treatment:
     type: bool
     influence_conversation: false
     mappings:
@@ -74,19 +75,19 @@ slots:
       value: true
       conditions:
       - active_loop: vine_form
-        requested_slot: treatment
+        requested_slot: has_treatment
     - type: from_intent
       intent: negative
       value: false
       conditions:
       - active_loop: vine_form
-        requested_slot: treatment
+        requested_slot: has_treatment
 
 forms:
   vine_form:
     required_slots:
-      - vine_name
-      - harvest
-      - illness
-      - treatment
+      - vineyard_name
+      - vineyard_status
+      - has_illness
+      - has_treatment
 
