@@ -4,7 +4,7 @@ nlu:
 - intent: new_entry
   examples: |
     - goodmorning
-    - νεα καταχώρηση
+    - I'd like to make a new entry
     - θέλω να κάνω καταχώρηση
     - να καταχωρήσω
     - goodevening
