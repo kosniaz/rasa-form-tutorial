@@ -16,7 +16,7 @@ What's the name of your vineyard?
   utter_ask_vineyard_status:
   - text: How's the vineyard progressing?
   utter_thank_you:
-  - text: Ευχαριστώ πολύ για την καταχώρηση
+  - text: Thank you very much for the entry
   utter_slots_values:
   - text:  vineyard_name = {vineyard_name}, vineyard_status = {vineyard_status}, has_illness = {has_illness}, has_treatment = {has_treatment}
 
