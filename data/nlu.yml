@@ -3,39 +3,85 @@ version: "3.1"
 nlu:
 - intent: new_entry
   examples: |
-    - goodmorning
-    - I'd like to make a new entry
-    - θέλω να κάνω καταχώρηση
-    - να καταχωρήσω
-    - goodevening
-    - good afternoon
+    - Good morning! I'd like to make a new entry.
+    - Can we add a fresh record?
+    - I want to start a new entry.
+    - How can I create a new entry?
+    - Add a new entry, please.
+    - Let's make a new entry.
+    - I need to add a new record.
+    - Is it possible to initiate a new entry?
+    - How do I begin a new entry?
+    - I'd like to add a new entry to the system.
 
 - intent: affirmative
   examples: |
-    - ναι
-    - μάλιστα
-    - φυσικά
-    - εννοείται
-    - ναι ναι ναιι
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - Yes
+    - Absolutely
+    - Sure
+    - Of course
+    - That sounds good
+    - Correct
+    - Certainly
+    - Indeed
+    - Definitely
+    - I agree
+    - Alright
+    - OK
+    - Great
+    - Okay, let's do it
+    - Yes, I'm in
+    - Count me in
+    - Sure thing
+    - No problem
+    - Affirmative
+    - I'm on board
 
 - intent: negative
   examples: |
-    - no
-    - όχι
-    - όχι οχι
-    - μπα
-    - δεν
-    - δεν νομιζω
-    - n
-    - never
+    - No
+    - Nope
+    - Not really
     - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - I disagree
+    - Not interested
+    - Not my thing
+    - Never
+    - Definitely not
+    - Not at all
+    - Negative
+    - I decline
+    - I refuse
+    - Not gonna happen
+    - Not for me
+    - I'm sorry, but no
+    - I can't agree
+    - I have to say no
+    - I'm afraid not
+    - That's a no
+    - I'm not interested, thanks
+    - I can't support that
+    - I'm against that idea
+    - I'm not keen on that
+    - I'm not on board
+    - I'm not up for it
+    - That's not for me
+    - I'm not feeling it
 
+- intent: insult
+  examples: |
+    - You're such a fool!
+    - Get lost, you miserable scoundrel!
+    - You're an idiot!
+    - May misfortune befall you, you wretched creature!
+    - You're an insolent cur, unworthy of my presence!
+    - You're a pathetic loser, deserving nothing but scorn!
+    - You're a worthless imbecile, lacking any sense!
+    - May you be plagued by the torment of a thousand annoyances, you despicable wretch!
+    - Your presence is an affront to me, you pitiful idiot!
+    - You're an unbearable moron, a laughingstock to everyone!
+    - Your intelligence is as feeble as a broken twig!
+    - You're a pustule on the face of humanity, a blight upon the world!
+    - I would rather endure the company of a wild beast than be with you!
+    - Your wit is as dull as a rusty spoon, unfit for any conversation!
+    - You're a witless, sniveling worm, fit only for groveling in the dirt!
