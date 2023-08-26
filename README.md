@@ -7,7 +7,7 @@ Goes with my article about rasa forms (pt 1)
 1. use python3.8 or python3.9 (virtualenv or conda environment *strongly* recommended)
 2. `pip install -r requirements.txt`
 3. `rasa train`
-4. `rasa run -p <PORT>` OR `rasa shell - <PORT>`
+4. `rasa run -p <PORT>` OR `rasa shell -p <PORT>`
 
 
 ## Rasa server http interface
