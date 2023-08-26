@@ -5,9 +5,9 @@ Goes with my article about rasa forms (pt 1)
 ## Quickstart for rasa server
 
 1. use python3.8 or python3.9 (virtualenv or conda environment *strongly* recommended)
-2. pip install -r requirements.txt
-3. rasa train
-4. rasa run -p PORT
+2. `pip install -r requirements.txt`
+3. `rasa train`
+4. `rasa run -p <PORT>` OR `rasa shell - <PORT>`
 
 
 ## Rasa server http interface
